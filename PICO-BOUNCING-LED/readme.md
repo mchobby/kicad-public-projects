@@ -16,4 +16,4 @@ Un projet original de Framboise314 ( [voyez ce lien](https://www.framboise314.fr
 
 Voyez l'archive ZIP pour les fichiers de fabrications.
 
-![PICO-BOUNCING-LED dimensions](PICO-BOUNCING-LED-size-r1.jpg)
+![PICO-BOUNCING-LED dimensions](docs/_static/PICO-BOUNCING-LED-size-r1.jpg)
