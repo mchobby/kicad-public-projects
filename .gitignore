@@ -2,6 +2,8 @@
 docs/push.sh
 pushgit.sh
 makezip.sh
+.sch-bak
+.kicad_pcb-bak
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

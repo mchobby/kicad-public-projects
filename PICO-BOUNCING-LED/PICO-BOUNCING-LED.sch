@@ -1,0 +1,466 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Pico Bouncing LED"
+Date "2021-11-28"
+Rev "1"
+Comp "MC Hobby SPRL"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L raspberry:pico U3
+U 1 1 61A2D671
+P 4225 1130
+F 0 "U3" H 5550 1339 50  0000 C CNN
+F 1 "pico" H 5550 1226 79  0000 C CNB
+F 2 "raspberry:PICO" H 4225 1030 50  0001 C CNN
+F 3 "" H 4225 1030 50  0001 C CNN
+	1    4225 1130
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push SW1
+U 1 1 61A2E9B3
+P 7285 1480
+F 0 "SW1" H 7285 1765 50  0000 C CNN
+F 1 "Reset" H 7285 1674 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 7285 1680 50  0001 C CNN
+F 3 "~" H 7285 1680 50  0001 C CNN
+	1    7285 1480
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_Schottky D1
+U 1 1 61A2F6E3
+P 6325 3830
+F 0 "D1" H 6420 3745 50  0000 C CNN
+F 1 "1N5819" H 6350 3925 50  0000 C CNN
+F 2 "Diode_THT:D_A-405_P10.16mm_Horizontal" H 6325 3830 50  0001 C CNN
+F 3 "~" H 6325 3830 50  0001 C CNN
+	1    6325 3830
+	0    1    1    0   
+$EndComp
+$Comp
+L Switch:SW_DIP_x04 SW2
+U 1 1 61A325EE
+P 7545 2330
+F 0 "SW2" H 7545 2065 50  0000 C CNN
+F 1 "CONFIG" H 7545 2706 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_DIP_SPSTx04_Piano_10.8x11.72mm_W7.62mm_P2.54mm" H 7545 2330 50  0001 C CNN
+F 3 "~" H 7545 2330 50  0001 C CNN
+	1    7545 2330
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 J1
+U 1 1 61A356B5
+P 1495 2445
+F 0 "J1" H 1450 2230 50  0000 L CNN
+F 1 "Conn_Pixels" H 1350 2670 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 1495 2445 50  0001 C CNN
+F 3 "~" H 1495 2445 50  0001 C CNN
+	1    1495 2445
+	-1   0    0    -1  
+$EndComp
+$Comp
+L 74xx_mch:74AHCT125 U2
+U 1 1 61A46464
+P 2660 2245
+F 0 "U2" H 3040 2390 50  0000 C CNN
+F 1 "74AHCT125" H 3150 1595 50  0000 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_LongPads" H 2660 2245 50  0001 C CNN
+F 3 "" H 2660 2245 50  0001 C CNN
+	1    2660 2245
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR03
+U 1 1 61A4C022
+P 2240 1425
+F 0 "#PWR03" H 2240 1175 50  0001 C CNN
+F 1 "GND" H 2240 1285 50  0000 C CNN
+F 2 "" H 2240 1425 50  0001 C CNN
+F 3 "" H 2240 1425 50  0001 C CNN
+	1    2240 1425
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2235 1385 2240 1385
+Wire Wire Line
+	2240 1385 2240 1425
+$Comp
+L power:GND #PWR01
+U 1 1 61A4D618
+P 1935 1610
+F 0 "#PWR01" H 1935 1360 50  0001 C CNN
+F 1 "GND" H 1935 1470 50  0000 C CNN
+F 2 "" H 1935 1610 50  0001 C CNN
+F 3 "" H 1935 1610 50  0001 C CNN
+	1    1935 1610
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1935 1585 1935 1610
+$Comp
+L power:PWR_FLAG #FLG01
+U 1 1 61A505B2
+P 2415 1385
+F 0 "#FLG01" H 2415 1460 50  0001 C CNN
+F 1 "PWR_FLAG" H 2560 1540 50  0000 C CNN
+F 2 "" H 2415 1385 50  0001 C CNN
+F 3 "~" H 2415 1385 50  0001 C CNN
+	1    2415 1385
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	2910 2075 2910 1875
+$Comp
+L power:GND #PWR06
+U 1 1 61A58EFE
+P 2920 3005
+F 0 "#PWR06" H 2920 2755 50  0001 C CNN
+F 1 "GND" H 2925 2832 50  0000 C CNN
+F 2 "" H 2920 3005 50  0001 C CNN
+F 3 "" H 2920 3005 50  0001 C CNN
+	1    2920 3005
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2920 2945 2920 2975
+$Comp
+L power:GND #PWR04
+U 1 1 61A600D7
+P 2650 2015
+F 0 "#PWR04" H 2650 1765 50  0001 C CNN
+F 1 "GND" H 2755 2015 50  0000 C CNN
+F 2 "" H 2650 2015 50  0001 C CNN
+F 3 "" H 2650 2015 50  0001 C CNN
+	1    2650 2015
+	1    0    0    -1  
+$EndComp
+Text Label 2240 2345 0    50   ~ 0
+neopixel
+Text Label 3750 1230 0    50   ~ 0
+neopixel
+Wire Wire Line
+	4125 1230 3725 1230
+Wire Wire Line
+	6325 3530 6325 3625
+Wire Wire Line
+	3335 1875 3600 1875
+Wire Wire Line
+	3600 1875 3600 4140
+Wire Wire Line
+	3600 4140 6325 4140
+Wire Wire Line
+	6325 4140 6325 3980
+Connection ~ 3335 1875
+Wire Wire Line
+	6975 1480 7085 1480
+$Comp
+L power:GND #PWR09
+U 1 1 61A747B7
+P 7530 1480
+F 0 "#PWR09" H 7530 1230 50  0001 C CNN
+F 1 "GND" H 7535 1307 50  0000 C CNN
+F 2 "" H 7530 1480 50  0001 C CNN
+F 3 "" H 7530 1480 50  0001 C CNN
+	1    7530 1480
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7485 1480 7530 1480
+Wire Wire Line
+	6975 2130 7245 2130
+Wire Wire Line
+	6975 2230 7245 2230
+Wire Wire Line
+	6975 2330 7245 2330
+Wire Wire Line
+	6975 2430 7245 2430
+$Comp
+L power:GND #PWR010
+U 1 1 61A7E4A5
+P 7915 2535
+F 0 "#PWR010" H 7915 2285 50  0001 C CNN
+F 1 "GND" H 7920 2362 50  0000 C CNN
+F 2 "" H 7915 2535 50  0001 C CNN
+F 3 "" H 7915 2535 50  0001 C CNN
+	1    7915 2535
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7915 2535 7915 2430
+Wire Wire Line
+	7915 2130 7845 2130
+Wire Wire Line
+	7845 2230 7915 2230
+Connection ~ 7915 2230
+Wire Wire Line
+	7915 2230 7915 2130
+Wire Wire Line
+	7845 2330 7915 2330
+Connection ~ 7915 2330
+Wire Wire Line
+	7915 2330 7915 2230
+Wire Wire Line
+	7845 2430 7915 2430
+Connection ~ 7915 2430
+Wire Wire Line
+	7915 2430 7915 2330
+$Comp
+L power:GND #PWR08
+U 1 1 61A81D07
+P 4975 3615
+F 0 "#PWR08" H 4975 3365 50  0001 C CNN
+F 1 "GND" H 4980 3442 50  0000 C CNN
+F 2 "" H 4975 3615 50  0001 C CNN
+F 3 "" H 4975 3615 50  0001 C CNN
+	1    4975 3615
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4975 3530 4975 3595
+Connection ~ 4975 3595
+Wire Wire Line
+	4975 3595 4975 3615
+Wire Wire Line
+	4475 3530 4475 3595
+Wire Wire Line
+	4575 3530 4575 3595
+Connection ~ 4575 3595
+Wire Wire Line
+	4575 3595 4475 3595
+Wire Wire Line
+	4675 3530 4675 3595
+Wire Wire Line
+	4575 3595 4675 3595
+Connection ~ 4675 3595
+Wire Wire Line
+	4675 3595 4775 3595
+Wire Wire Line
+	4775 3530 4775 3595
+Connection ~ 4775 3595
+Wire Wire Line
+	4775 3595 4875 3595
+Wire Wire Line
+	4875 3530 4875 3595
+Connection ~ 4875 3595
+Wire Wire Line
+	4875 3595 4975 3595
+NoConn ~ 6225 3530
+NoConn ~ 6525 3530
+NoConn ~ 6625 3530
+NoConn ~ 5725 3530
+NoConn ~ 5625 3530
+NoConn ~ 5525 3530
+NoConn ~ 4125 1330
+NoConn ~ 4125 1530
+NoConn ~ 4125 1630
+NoConn ~ 4125 1730
+NoConn ~ 4125 1830
+NoConn ~ 4125 2030
+NoConn ~ 4125 2130
+NoConn ~ 4125 2230
+NoConn ~ 4125 2330
+NoConn ~ 4125 2530
+NoConn ~ 4125 2630
+NoConn ~ 4125 2730
+NoConn ~ 4125 2830
+NoConn ~ 4125 3030
+NoConn ~ 4125 3130
+NoConn ~ 6975 2630
+NoConn ~ 6975 2730
+NoConn ~ 6975 1930
+NoConn ~ 6975 1830
+NoConn ~ 6975 1730
+NoConn ~ 6975 1630
+NoConn ~ 6975 1330
+NoConn ~ 6975 1230
+NoConn ~ 2560 2745
+NoConn ~ 3260 2745
+NoConn ~ 3260 2445
+Wire Wire Line
+	2560 2545 2395 2545
+Wire Wire Line
+	2395 2545 2395 2645
+Wire Wire Line
+	2395 2975 2920 2975
+Connection ~ 2920 2975
+Wire Wire Line
+	2920 2975 2920 3005
+Wire Wire Line
+	2560 2645 2395 2645
+Connection ~ 2395 2645
+Wire Wire Line
+	2395 2645 2395 2975
+Wire Wire Line
+	2920 2975 3410 2975
+Wire Wire Line
+	3410 2975 3410 2645
+Wire Wire Line
+	3410 2245 3260 2245
+Wire Wire Line
+	3260 2345 3410 2345
+Connection ~ 3410 2345
+Wire Wire Line
+	3410 2345 3410 2245
+Wire Wire Line
+	3260 2545 3410 2545
+Connection ~ 3410 2545
+Wire Wire Line
+	3410 2545 3410 2345
+Wire Wire Line
+	3260 2645 3410 2645
+Connection ~ 3410 2645
+Wire Wire Line
+	3410 2645 3410 2545
+$Comp
+L Device:Jumper_NO_Small JP1
+U 1 1 61AACFEF
+P 1985 2345
+F 0 "JP1" H 1975 2285 50  0000 C CNN
+F 1 "Bypass" H 1975 2420 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm" H 1985 2345 50  0001 C CNN
+F 3 "~" H 1985 2345 50  0001 C CNN
+	1    1985 2345
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2910 1875 3335 1875
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 61AB6674
+P 6025 3625
+F 0 "#FLG0101" H 6025 3700 50  0001 C CNN
+F 1 "PWR_FLAG" H 6030 3575 50  0000 C CNN
+F 2 "" H 6025 3625 50  0001 C CNN
+F 3 "~" H 6025 3625 50  0001 C CNN
+	1    6025 3625
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6025 3625 6325 3625
+Connection ~ 6325 3625
+Wire Wire Line
+	6325 3625 6325 3680
+$Comp
+L Device:R R1
+U 1 1 61AC36B3
+P 2370 2445
+F 0 "R1" V 2455 2445 50  0000 C CNN
+F 1 "R200" V 2370 2445 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 2300 2445 50  0001 C CNN
+F 3 "~" H 2370 2445 50  0001 C CNN
+	1    2370 2445
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2520 2445 2560 2445
+Wire Wire Line
+	1695 2345 1695 2170
+Wire Wire Line
+	1695 1875 2910 1875
+Connection ~ 2910 1875
+Wire Wire Line
+	1695 2545 1695 2750
+Wire Wire Line
+	1695 2975 2395 2975
+Connection ~ 2395 2975
+Wire Wire Line
+	2220 2345 2265 2345
+Wire Wire Line
+	1695 2445 1795 2445
+Wire Wire Line
+	1885 2345 1795 2345
+Wire Wire Line
+	1795 2345 1795 2445
+Connection ~ 1795 2445
+Wire Wire Line
+	1795 2445 2220 2445
+Wire Wire Line
+	2085 2345 2085 2395
+Wire Wire Line
+	2085 2395 2265 2395
+Wire Wire Line
+	2265 2395 2265 2345
+Connection ~ 2265 2345
+Wire Wire Line
+	2265 2345 2560 2345
+Text Notes 1750 2230 0    50   ~ 0
+solder to bypass \nthe 74AHCT125\nwhen not present
+Wire Wire Line
+	2560 2245 2520 2245
+Wire Wire Line
+	2520 2245 2520 2015
+Wire Wire Line
+	2520 2015 2650 2015
+$Comp
+L Device:CP C1
+U 1 1 61ADB58E
+P 1125 2450
+F 0 "C1" H 1160 2550 50  0000 L CNN
+F 1 "C1000uF" V 985 2280 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm" H 1163 2300 50  0001 C CNN
+F 3 "~" H 1125 2450 50  0001 C CNN
+	1    1125 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1125 2300 1125 2170
+Wire Wire Line
+	1125 2170 1695 2170
+Connection ~ 1695 2170
+Wire Wire Line
+	1695 2170 1695 1875
+Wire Wire Line
+	1125 2600 1125 2750
+Wire Wire Line
+	1125 2750 1695 2750
+Connection ~ 1695 2750
+Wire Wire Line
+	1695 2750 1695 2975
+$Comp
+L Connector:Barrel_Jack_MountingPin J2
+U 1 1 61A31BC9
+P 1935 1285
+F 0 "J2" H 1710 1050 50  0000 C CNN
+F 1 "Power_Jack" H 1920 1495 50  0000 C CNN
+F 2 "Connector_BarrelJack:BarrelJack_Horizontal" H 1985 1245 50  0001 C CNN
+F 3 "~" H 1985 1245 50  0001 C CNN
+	1    1935 1285
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3335 1185 3335 1875
+Wire Wire Line
+	4475 3595 4375 3595
+Wire Wire Line
+	4375 3595 4375 3530
+Connection ~ 4475 3595
+Wire Wire Line
+	2235 1185 2425 1185
+Wire Wire Line
+	2240 1385 2415 1385
+Connection ~ 2240 1385
+$Comp
+L power:PWR_FLAG #FLG0102
+U 1 1 61B1ABD6
+P 2425 1185
+F 0 "#FLG0102" H 2425 1260 50  0001 C CNN
+F 1 "PWR_FLAG" H 2425 1358 50  0000 C CNN
+F 2 "" H 2425 1185 50  0001 C CNN
+F 3 "~" H 2425 1185 50  0001 C CNN
+	1    2425 1185
+	1    0    0    -1  
+$EndComp
+Connection ~ 2425 1185
+Wire Wire Line
+	2425 1185 3335 1185
+$EndSCHEMATC
