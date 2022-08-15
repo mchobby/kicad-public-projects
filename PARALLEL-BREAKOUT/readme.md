@@ -12,9 +12,13 @@ Those are quite old computers as the OPtiplex is date from 2002 (2007 for the NC
 
 This project is made of many sub-project. Just navigates the various sub-folder to gets more information about them. I stored readme files into each sub-folder to give some details about that part of the project.
 
-The main items [Parallel-brk](Parallel-brk) and [Parallel-cobbler](Parallel-cobbler)  detailled here below.  
+The main sub-projects are:
+* [Parallel-brk](Parallel-brk): breakout a parallel port to a RPi GPIO alike port.
+* [Parallel-cobbler](Parallel-cobbler): from GPIO to breadboard converted.  
+* [Parallel-bus](Parallel-bus): from GPIO to 16bits address bus + 8bits data bus + clock + control bus.  
 
-## Prototyping Hardware
+
+# Prototyping Hardware
 From there, I started to design 2 first boards to facilitate test and prototyping.
 
 ![Parallel breakout kit](docs/_static/parallel-breakout-kit.jpg)
@@ -45,6 +49,12 @@ The parallel port also brings 5 inputs bits and 4 additional output bits (C0..C4
 ![Parallel Breakout: inputs & outputs](docs/_static/cobbler-input-output.jpg)
 
 The Python code is [available here](https://arduino103.blogspot.com/2022/07/parallel-breakout-tests-dentreesorties.html).
+
+# Expand parallel port to data & address bus
+
+![Parallel-bus](Parallel-bus/docs/_static/parallel-bus-features.jpg)
+
+Read more from the [Parallel-bus sub-project folder](Parallel-bus/)
 
 # Ressources
 * [All the "Parallel-Breakout" articles available on the blog](https://arduino103.blogspot.com/search?q=parallel-breakout) (_french_)
