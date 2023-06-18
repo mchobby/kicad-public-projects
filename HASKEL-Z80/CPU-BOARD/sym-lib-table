@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name Z80_mch)(type Legacy)(uri /home/domeu/kicad/kicad-public-projects/Z80_mch.lib)(options "")(descr ""))
+)

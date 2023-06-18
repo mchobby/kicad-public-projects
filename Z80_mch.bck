@@ -1,0 +1,47 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 74HC138N
+D 3-to-8 line decoder/multiplexer with address, DIP-16
+K demux
+$ENDCMP
+#
+$CMP 74HCT137
+D 3-to-8 line decoder/multiplexer with address latches, DIP-16/SOIC-16/SSOP-16
+K demux
+F http://www.ti.com/lit/ds/symlink/cd74hc237.pdf
+$ENDCMP
+#
+$CMP 74HCT137_copy
+D 3-to-8 line decoder/multiplexer with address latches, DIP-16/SOIC-16/SSOP-16
+K demux
+F http://www.ti.com/lit/ds/symlink/cd74hc237.pdf
+$ENDCMP
+#
+$CMP CY62256-70PC
+D 256K (32K x 8) Static RAM, 70ns, DIP-28
+K RAM SRAM CMOS MEMORY
+F https://ecee.colorado.edu/~mcclurel/Cypress_SRAM_CY62256.pdf
+$ENDCMP
+#
+$CMP HM62256BLP
+D 32,768-word × 8-bit High Speed CMOS Static RAM, 70ns, DIP-28
+K RAM SRAM CMOS MEMORY
+F https://web.mit.edu/6.115/www/document/62256.pdf
+$ENDCMP
+#
+$CMP HY6116ALP
+D 2K x 8 bit SRAM, 120ns, DIP-24
+K RAM SRAM CMOS MEMORY
+$ENDCMP
+#
+$CMP S2559E
+D DTMF Tone Generator, DIP-16
+K DTMF Tone Generator
+$ENDCMP
+#
+$CMP Z8030
+D Z8430, Z80 CTC, Counter/Timer Circuit
+K Counter/Timer Circuit for Z80, DIP28
+$ENDCMP
+#
+#End Doc Library
