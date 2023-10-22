@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 1
 Title "DTMF Phone central - CPU Board AddOn - Hasler"
 Date "2023-06-11"
-Rev "1.0"
+Rev "1.1"
 Comp ""
 Comment1 ""
 Comment2 "RTT No 41178005 (Belgium)"
@@ -383,17 +383,6 @@ d7
 Text GLabel 1255 6065 0    50   Input ~ 0
 _RCIOce
 $Comp
-L 74xx:74LS32 U107
-U 1 1 64953BFD
-P 10645 930
-F 0 "U107" H 10650 930 50  0000 C CNN
-F 1 "74LS32" H 10630 1130 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm_Socket" H 10645 930 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74LS32" H 10645 930 50  0001 C CNN
-	1    10645 930 
-	1    0    0    -1  
-$EndComp
-$Comp
 L 74xx:74LS32 U101
 U 2 1 64954FE0
 P 2755 6165
@@ -424,17 +413,6 @@ F 1 "74LS32" H 1550 6370 50  0000 C CNN
 F 2 "Package_DIP:DIP-14_W7.62mm_Socket" H 1555 6165 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74LS32" H 1555 6165 50  0001 C CNN
 	4    1555 6165
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74xx:74LS32 U107
-U 5 1 6495AA15
-P 6155 7235
-F 0 "U107" H 6180 7585 50  0000 L CNN
-F 1 "74LS32" H 6005 7235 50  0000 L CNN
-F 2 "Package_DIP:DIP-14_W7.62mm_Socket" H 6155 7235 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74LS32" H 6155 7235 50  0001 C CNN
-	5    6155 7235
 	1    0    0    -1  
 $EndComp
 Text Label 1255 6265 2    50   ~ 0
@@ -1121,23 +1099,23 @@ $EndComp
 $Comp
 L 74xx:74LS04 U103
 U 4 1 64B3D4EC
-P 10650 2445
-F 0 "U103" H 10600 2450 50  0000 C CNN
-F 1 "74LS04" H 10625 2635 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm_Socket" H 10650 2445 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74LS04" H 10650 2445 50  0001 C CNN
-	4    10650 2445
+P 10355 2435
+F 0 "U103" H 10305 2440 50  0000 C CNN
+F 1 "74LS04" H 10330 2625 50  0000 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket" H 10355 2435 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS04" H 10355 2435 50  0001 C CNN
+	4    10355 2435
 	1    0    0    -1  
 $EndComp
 $Comp
 L 74xx:74LS04 U103
 U 5 1 64B3E35C
-P 10650 2050
-F 0 "U103" H 10610 2055 50  0000 C CNN
-F 1 "74LS04" H 10620 2260 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm_Socket" H 10650 2050 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74LS04" H 10650 2050 50  0001 C CNN
-	5    10650 2050
+P 10355 2040
+F 0 "U103" H 10315 2045 50  0000 C CNN
+F 1 "74LS04" H 10325 2250 50  0000 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket" H 10355 2040 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS04" H 10355 2040 50  0001 C CNN
+	5    10355 2040
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1165,45 +1143,12 @@ $EndComp
 $Comp
 L 74xx:74LS32 U101
 U 1 1 64B75BCC
-P 7205 5815
-F 0 "U101" H 7205 6140 50  0000 C CNN
-F 1 "74LS32" H 7205 6049 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm_Socket" H 7205 5815 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74LS32" H 7205 5815 50  0001 C CNN
-	1    7205 5815
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74xx:74LS32 U107
-U 2 1 64B777E6
-P 10645 1390
-F 0 "U107" H 10645 1400 50  0000 C CNN
-F 1 "74LS32" H 10635 1585 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm_Socket" H 10645 1390 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74LS32" H 10645 1390 50  0001 C CNN
-	2    10645 1390
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74xx:74LS32 U107
-U 3 1 64B78F08
-P 8405 5815
-F 0 "U107" H 8410 5820 50  0000 C CNN
-F 1 "74LS32" H 8390 6015 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm_Socket" H 8405 5815 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74LS32" H 8405 5815 50  0001 C CNN
-	3    8405 5815
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74xx:74LS32 U107
-U 4 1 64B7ACB5
-P 7805 5915
-F 0 "U107" H 7800 5925 50  0000 C CNN
-F 1 "74LS32" H 7765 6130 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm_Socket" H 7805 5915 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74LS32" H 7805 5915 50  0001 C CNN
-	4    7805 5915
+P 10350 920
+F 0 "U101" H 10365 955 50  0000 C CNN
+F 1 "74LS32" H 10375 865 50  0000 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket" H 10350 920 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS32" H 10350 920 50  0001 C CNN
+	1    10350 920 
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1230,17 +1175,6 @@ RCIO Output
 Text Notes 6405 4710 0    50   ~ 0
 Port 0x1D (29d)
 $Comp
-L Device:C C103
-U 1 1 64DC6855
-P 6525 7185
-F 0 "C103" H 6555 7065 50  0000 L CNN
-F 1 "C10nF" V 6470 6870 50  0000 L CNN
-F 2 "Capacitor_THT:C_Disc_D3.4mm_W2.1mm_P2.50mm" H 6563 7035 50  0001 C CNN
-F 3 "~" H 6525 7185 50  0001 C CNN
-	1    6525 7185
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:C C102
 U 1 1 64DD5012
 P 5720 7215
@@ -1266,9 +1200,6 @@ Wire Wire Line
 	4590 7735 4955 7735
 Wire Wire Line
 	6525 7735 6525 7545
-Connection ~ 6155 7735
-Wire Wire Line
-	6155 7735 6525 7735
 Connection ~ 5335 7735
 Wire Wire Line
 	5335 7735 5720 7735
@@ -1300,25 +1231,14 @@ Wire Wire Line
 	5335 6735 5720 6735
 Connection ~ 5335 6735
 Wire Wire Line
-	6155 6735 6525 6735
-Wire Wire Line
 	6525 6735 6525 6880
-Connection ~ 6155 6735
 Wire Wire Line
 	6760 6880 6525 6880
-Connection ~ 6525 6880
-Wire Wire Line
-	6525 6880 6525 7035
 Wire Wire Line
 	6760 7545 6525 7545
-Connection ~ 6525 7545
-Wire Wire Line
-	6525 7545 6525 7335
 Wire Wire Line
 	5720 7365 5720 7735
 Connection ~ 5720 7735
-Wire Wire Line
-	5720 7735 6155 7735
 Wire Wire Line
 	4955 7365 4955 7735
 Connection ~ 4955 7735
@@ -1332,48 +1252,35 @@ Wire Wire Line
 Wire Wire Line
 	5720 7065 5720 6735
 Connection ~ 5720 6735
-Wire Wire Line
-	5720 6735 6155 6735
-Wire Wire Line
-	10345 830  10345 1030
-Connection ~ 10345 1030
-Wire Wire Line
-	10345 1030 10345 1290
-Wire Wire Line
-	10345 1290 10345 1490
-Connection ~ 10345 1290
 $Comp
 L power:GND #PWR0123
 U 1 1 64E4825F
-P 10345 1490
-F 0 "#PWR0123" H 10345 1240 50  0001 C CNN
-F 1 "GND" H 10345 1350 50  0000 C CNN
-F 2 "" H 10345 1490 50  0001 C CNN
-F 3 "" H 10345 1490 50  0001 C CNN
-	1    10345 1490
+P 10050 1480
+F 0 "#PWR0123" H 10050 1230 50  0001 C CNN
+F 1 "GND" H 10050 1340 50  0000 C CNN
+F 2 "" H 10050 1480 50  0001 C CNN
+F 3 "" H 10050 1480 50  0001 C CNN
+	1    10050 1480
 	1    0    0    -1  
 $EndComp
-Connection ~ 10345 1490
-NoConn ~ 10945 1390
-NoConn ~ 10945 930 
 Wire Wire Line
-	10350 2050 10350 2445
+	10055 2040 10055 2435
 $Comp
 L power:+5V #PWR0124
 U 1 1 64E68138
-P 10350 1975
-F 0 "#PWR0124" H 10350 1825 50  0001 C CNN
-F 1 "+5V" H 10325 2115 50  0000 C CNN
-F 2 "" H 10350 1975 50  0001 C CNN
-F 3 "" H 10350 1975 50  0001 C CNN
-	1    10350 1975
+P 10055 1965
+F 0 "#PWR0124" H 10055 1815 50  0001 C CNN
+F 1 "+5V" H 10030 2105 50  0000 C CNN
+F 2 "" H 10055 1965 50  0001 C CNN
+F 3 "" H 10055 1965 50  0001 C CNN
+	1    10055 1965
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	10350 2050 10350 1975
-Connection ~ 10350 2050
-NoConn ~ 10950 2050
-NoConn ~ 10950 2445
+	10055 2040 10055 1965
+Connection ~ 10055 2040
+NoConn ~ 10655 2040
+NoConn ~ 10655 2435
 Entry Wire Line
 	2695 2370 2795 2470
 Wire Wire Line
@@ -1743,7 +1650,7 @@ Wire Notes Line
 	5055 6540 6970 6540
 Wire Notes Line
 	4755 6540 500  6540
-Text Notes 6245 5400 0    50   ~ 0
+Text Notes 6245 5270 0    50   ~ 0
 IO Write for a1,a0 = 0,1
 $Comp
 L Device:D_ALT D103
@@ -2102,6 +2009,121 @@ Text Notes 4425 2240 0    50   ~ 0
 0x18
 Text Notes 4430 2340 0    50   ~ 0
 0x1C
+Text Notes 3785 2120 1    50   ~ 10
+74HCT138
+$Comp
+L 4xxx:4081 U109
+U 1 1 6536F9D9
+P 7205 5815
+F 0 "U109" H 7145 5850 50  0000 C CNN
+F 1 "4081" H 7165 5770 50  0000 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket" H 7205 5815 50  0001 C CNN
+F 3 "http://www.intersil.com/content/dam/Intersil/documents/cd40/cd4073bms-81bms-82bms.pdf" H 7205 5815 50  0001 C CNN
+	1    7205 5815
+	1    0    0    -1  
+$EndComp
+$Comp
+L 4xxx:4081 U109
+U 2 1 653726F0
+P 7805 5915
+F 0 "U109" H 7740 5960 50  0000 C CNN
+F 1 "4081" H 7760 5870 50  0000 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket" H 7805 5915 50  0001 C CNN
+F 3 "http://www.intersil.com/content/dam/Intersil/documents/cd40/cd4073bms-81bms-82bms.pdf" H 7805 5915 50  0001 C CNN
+	2    7805 5915
+	1    0    0    -1  
+$EndComp
+$Comp
+L 4xxx:4081 U109
+U 3 1 65375A13
+P 8405 5815
+F 0 "U109" H 8340 5860 50  0000 C CNN
+F 1 "4081" H 8365 5765 50  0000 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket" H 8405 5815 50  0001 C CNN
+F 3 "http://www.intersil.com/content/dam/Intersil/documents/cd40/cd4073bms-81bms-82bms.pdf" H 8405 5815 50  0001 C CNN
+	3    8405 5815
+	1    0    0    -1  
+$EndComp
+$Comp
+L 4xxx:4081 U109
+U 4 1 653795B5
+P 10350 1305
+F 0 "U109" H 10295 1345 50  0000 C CNN
+F 1 "4081" H 10315 1250 50  0000 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket" H 10350 1305 50  0001 C CNN
+F 3 "http://www.intersil.com/content/dam/Intersil/documents/cd40/cd4073bms-81bms-82bms.pdf" H 10350 1305 50  0001 C CNN
+	4    10350 1305
+	1    0    0    -1  
+$EndComp
+$Comp
+L 4xxx:4081 U109
+U 5 1 6537D227
+P 3735 7235
+F 0 "U109" H 3785 7605 50  0000 L CNN
+F 1 "4081" H 3635 7280 50  0000 L CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket" H 3735 7235 50  0001 C CNN
+F 3 "http://www.intersil.com/content/dam/Intersil/documents/cd40/cd4073bms-81bms-82bms.pdf" H 3735 7235 50  0001 C CNN
+	5    3735 7235
+	1    0    0    -1  
+$EndComp
+Text Notes 6245 5395 0    50   ~ 0
+not( _RCIOce * ~a1~ * a0 * ~_wr~ )
+Wire Notes Line
+	9225 5675 9285 5675
+Wire Notes Line
+	9285 5675 9285 5795
+Wire Notes Line
+	9285 5795 9310 5795
+Wire Notes Line
+	9310 5795 9310 5675
+Wire Notes Line
+	9310 5675 9350 5675
+$Comp
+L Device:C C104
+U 1 1 65495C7D
+P 4200 7215
+F 0 "C104" H 4230 7100 50  0000 L CNN
+F 1 "C10nF" V 4120 6905 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D3.4mm_W2.1mm_P2.50mm" H 4238 7065 50  0001 C CNN
+F 3 "~" H 4200 7215 50  0001 C CNN
+	1    4200 7215
+	1    0    0    -1  
+$EndComp
+Text Notes 3540 7325 0    50   ~ 0
+AND gates
+Wire Wire Line
+	3735 6735 4200 6735
+Connection ~ 4590 6735
+Wire Wire Line
+	3735 7735 4200 7735
+Connection ~ 4590 7735
+Wire Wire Line
+	4200 7365 4200 7735
+Connection ~ 4200 7735
+Wire Wire Line
+	4200 7735 4590 7735
+Wire Wire Line
+	4200 7065 4200 6735
+Connection ~ 4200 6735
+Wire Wire Line
+	4200 6735 4590 6735
+Wire Wire Line
+	10050 1020 10050 1205
+Wire Wire Line
+	10050 1405 10050 1480
+Wire Wire Line
+	10050 1020 10050 820 
+Connection ~ 10050 1020
+Wire Wire Line
+	10050 1205 10050 1405
+Connection ~ 10050 1205
+Connection ~ 10050 1405
+NoConn ~ 10650 1305
+NoConn ~ 10650 920 
+Wire Wire Line
+	5720 6735 6525 6735
+Wire Wire Line
+	5720 7735 6525 7735
 Wire Bus Line
 	2795 4290 6585 4290
 Wire Bus Line
