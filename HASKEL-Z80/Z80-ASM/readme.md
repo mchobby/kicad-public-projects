@@ -40,6 +40,8 @@ It can be used with a [Makefile](test/Makefile) to compile the binaries.
 ```
 sudo apt install z80asm
 ```
+More information on z80asm can be found at [z80asm manpage @ Ubuntu](https://manpages.ubuntu.com/manpages/xenial/man1/z80asm.1.html).
+
 
 Additional tool that may be useful to inspect generated binary file.
 
