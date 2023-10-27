@@ -1,7 +1,8 @@
 
 PROGS=\
 	01_minimal.bin \
- 02_in_out.bin
+ 02_in_out.bin \
+ 03_pio.bin
 
 all: $(PROGS)
 
@@ -18,3 +19,4 @@ world: clean all
 
 01_minimal.bin: 01_minimal.asm
 02_in_out.bin: 02_in_out.asm
+03_pio.bin: io.asm 03_pio.asm
