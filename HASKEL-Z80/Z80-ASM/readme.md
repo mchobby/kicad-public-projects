@@ -207,6 +207,53 @@ main:
 ## 04_pio_read.asm
 This example follows the preceding one (so read it first).
 
-This time we will configure the port B of PIO1 as INPUT then read the state of a button wired on PB7 (among the 8 inputs available).
+The `04_pio_read.asm` will configure the PIO1 Port B as Input.
+
+The state of the button wired on the PB7 pin will be read to update the state of LED0 on the RCIO expansion board.
+
+The pin PB 7 (PortB 7) of PIO1 is available on P1 connector. The Push button is connected as follow:
 
 ![port P1 input](docs/pio-p1-portB-input.jpg)
+
+As Wired:
+* p1.PB7 is HIGH when the button IS RELEASE.
+* p1.PB7 is LOW (connected directly to ground) when the button IS PRESSED.
+
+This work with some reverse logic since the Pin is NOT HIGH when the button is pressed.
+
+![Read the PIO input](docs/pio-read-0.jpg)
+
+![Read the PIO input](docs/pio-read-1.jpg)
+
+```
+nclude 'io.asm'
+
+org     0x0000               ; Cold reset Z80 entry point.
+
+    ld a, $00                ; all LEDs OFF on expansion board
+    out (RCIO_OUTPUT), a
+
+main:
+    ld a,$4F                 ; set mode 1 (input)
+    out (PIO1_BASE+PIO_PORTB+PIO_CMD),a
+
+read_portb:
+    in a,(PIO1_BASE+PIO_PORTB+PIO_DATA)
+
+    bit 7,a                  ; is bit 7 set in a?
+    jp z,input_is_zero
+    ld a, $01                ; turn LED D0 On
+    jp set_user_led
+
+input_is_zero:
+    ld a, $00                ; turn LED D0 Off
+
+set_user_led:
+    out (RCIO_OUTPUT),a      ; Apply LED status to expansion board
+    jp read_portb            ; proceed next reading
+```
+
+Note:
+* The `bit` instruction checks if a given bit position is set (in a register). See all the variation of ["bit" on z80 Heaven.](http://z80-heaven.wikidot.com/instructions-set:bit) .
+* The `bit` instruction update the Zero flag. Set to 0 when the bit=1. Set to 1 when the bit=0.
+* Due to the logic used, the LED D0 is turned on when the button is released (so PB7=HIGH, so  bit 7,a is HIGH => Z flag is false/0)
