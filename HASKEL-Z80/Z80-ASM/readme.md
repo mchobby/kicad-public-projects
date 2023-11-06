@@ -226,7 +226,7 @@ This work with some reverse logic since the Pin is NOT HIGH when the button is p
 ![Read the PIO input](docs/pio-read-1.jpg)
 
 ```
-nclude 'io.asm'
+include 'io.asm'
 
 org     0x0000               ; Cold reset Z80 entry point.
 
@@ -257,3 +257,80 @@ Note:
 * The `bit` instruction checks if a given bit position is set (in a register). See all the variation of ["bit" on z80 Heaven.](http://z80-heaven.wikidot.com/instructions-set:bit) .
 * The `bit` instruction update the Zero flag. Set to 0 when the bit=1. Set to 1 when the bit=0.
 * Due to the logic used, the LED D0 is turned on when the button is released (so PB7=HIGH, so  bit 7,a is HIGH => Z flag is false/0)
+
+## 05_stack.asm
+The example follows the preceding ones (so read then first).
+It will mimic the Railroad Crossing by alternating the light blink between two LEDs on the RCIO expansion board.
+
+![rail cross road - use the stack](docs/rail-cross-road.jpg)
+
+This time, we will initialize the stack pointer allowing us to call "_delay" sub-routine and returns from it.
+
+This will be very handy while alternating LEDs.
+
+### About the STACK
+
+The stack --as it name suggest it-- stacks current address before initiate a call.
+This would allow the program a jump to a sub-routine then extract (pop) the address back from the stack (to a jump back to calling point).
+
+Stack can also be used to store some more data as register states (but we will not be managed here).
+
+* Stack is stored at the end of the memory space (also named memory top).
+* The stack pointer (SP register) contains the address of the LAST item added in the stack.
+* Stack work in reverse by decrementing stack pointer each time it adds someting to the stack.
+* The stack pointer value is decremented before adding the new value.
+* When removing items from the stack, the stack pointer increase (toward the memory top)
+* Stack store bytes (8 bits at the time). So when adding an address (16 bits), the stack pointer is incremented of 2 bytes.
+
+### Assembly program
+
+The `05_stack.asm` demonstrate the usage with the "_delay" routine wasting some time in computation (otherwise we would'n see the LEDs blinks).
+
+The analysis of CPU-Board did allows us to discover the 2 Kio of SRAM sitting at address 0x2000 to 0x27FF.
+
+![CPU Bpard addressing table](../CPU-BOARD/docs/addressing-table.png)
+
+```
+include 'io.asm'
+
+RAM_BASE: equ 0x2000 ; see CPU-BOARD addressing table
+RAM_END:  equ 0x27FF
+
+org     0x0000               ; Cold reset Z80 entry point.
+
+RST0:                        ; Zero Reset vector (cold starting)
+    ld sp,RAM_END+1          ; init stack pointer
+
+    ld a, $00                ; all LEDs OFF
+    out (RCIO_OUTPUT), a
+
+
+START:
+    ld a, 0x80           ; LED D7 on
+    out (RCIO_OUTPUT),a  ; Apply to LEDs
+
+    call _delay          ; insert a small delay in execution
+
+    ld a, 0x40           ; LED D6 on
+    out (RCIO_OUTPUT),a  ; Apply to LEDs
+
+    call _delay          ; small delay
+
+    jp START             ; restart the program
+```
+
+The `_delay` routine is also coded into the `05_stack.asm`  file.
+It is just counting from 0x8000 (32768) down to 0. Then returns to the caller.
+
+```
+_delay:
+    ld hl, 0x8000        ; load initial value in hl (encoded over 16 bits)
+dloop:
+    dec hl               ; decrement hl of 1
+    ld a, h              ; load high byte into accumulator
+    or l                 ; make OR with low byte of the value
+                         ; When reaching 0 then all bits are 0.
+                         ; Then OR operation between l & h will also have all bits set to 0
+    jp nz, dloop         ; if last operation is not zero then restart decounting loop
+    ret                  ; Return to callee
+```

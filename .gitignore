@@ -1,9 +1,19 @@
+# ASM binaries
+*.lst
+*.bin
+
+# document
+*.odt
+*.ods
+
 # Tooling
 docs/push.sh
 pushgit.sh
 makezip.sh
-.sch-bak
-.kicad_pcb-bak
+*.sch-bak
+*.kicad_pcb-bak
+CPU-BOARD-ADDON-v*
+Programmer-GLS27SF512-0*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

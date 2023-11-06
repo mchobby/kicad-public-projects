@@ -19,40 +19,44 @@
 ;
 ;****************************************************************************
 
-; Standard definition for IO for CPU-BOARD et Add-on board board
-
-; ==============================================
-;   CPU-BOARD
-; ==============================================
+; First program with stack pointer (set to end of RAM)
+; Alternate the blink of LEDs D7 & D6 on the RCIO expension board.
 ;
-; --- PIO ---
-;
-; eg: PIO2_BASE+PIO_PORTB+PIO_CMD
-;
-PIO1_BASE:  equ  0x08 ; Base port for PIO1
-PIO2_BASE:  equ  0x00
-PIO3_BASE:  equ  0x0C
 
-PIO_PORTA:  equ  0x00 ; to append to PIOx_BASE
-PIO_PORTB:  equ  0x01
+include 'io.asm'
 
-PIO_DATA:   equ  0x00 ; to append to PIOx_BASE
-PIO_CMD:    equ  0x02
+RAM_BASE: equ 0x2000 ; see CPU-BOARD addressing table
+RAM_END:  equ 0x27FF
 
-; --- CTC ---
-CTC_BASE:   equ  0x04
+org     0x0000               ; Cold reset Z80 entry point.
 
-CTC_CH0:    equ  0x00 ; Channel. Add to base. Fix CS1 & CS0 values
-CTC_CH1:    equ  0x02
-CTC_CH2:    equ  0x01
-CTC_CH3:    equ  0x03
+RST0:
+    ld sp,RAM_END+1          ; init stack pointer
+
+    ld a, $00                ; all LEDs OFF
+    out (RCIO_OUTPUT), a
 
 
-; ==============================================
-;   CPU-BOARD-ADDON
-; ==============================================
-;
-; --- RCIO ---
-;
-RCIO_OUTPUT:  equ  0x1D
-RCIO_INPUT:   equ  0x1C
+START:
+    ld a, 0x80           ; LED D7
+    out (RCIO_OUTPUT),a  ; Apply to LEDs
+
+    call _delay
+
+    ld a, 0x40           ; LED D6
+    out (RCIO_OUTPUT),a  ; Apply to LEDs
+
+    call _delay
+    jp START             ; restart the Loop
+
+; ############################################################
+;   Waste some time then return
+; ############################################################
+_delay:
+    ld hl, 0x8000
+dloop:
+    dec hl
+		ld a, h
+		or l
+		jp nz, dloop
+		ret
