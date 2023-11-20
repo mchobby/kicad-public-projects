@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 1
 Title "DTMF Phone central - CPU Board  - Hasler / Haskel / Ascom  "
 Date "2023-05-29"
-Rev "1.1"
+Rev "1.2"
 Comp ""
 Comment1 "CPU Board "
 Comment2 "1061- 2020 Rec C. "
@@ -982,8 +982,8 @@ $Comp
 L Connector_Generic:Conn_02x23_Odd_Even P1
 U 1 1 661B042F
 P 3815 6350
-F 0 "P1" H 3865 5025 50  0000 C CNN
-F 1 "Exp. Conn." H 3865 5116 50  0000 C CNN
+F 0 "P1" H 3870 4910 50  0000 C CNN
+F 1 "Exp. Conn." H 3865 5005 50  0000 C CNN
 F 2 "" H 3815 6350 50  0001 C CNN
 F 3 "~" H 3815 6350 50  0001 C CNN
 	1    3815 6350
@@ -993,8 +993,8 @@ $Comp
 L Connector_Generic:Conn_02x08_Odd_Even P2
 U 1 1 661BDF03
 P 1290 5755
-F 0 "P2" H 1340 5130 50  0000 C CNN
-F 1 "Power Con." H 1340 5221 50  0000 C CNN
+F 0 "P2" H 1340 5010 50  0000 C CNN
+F 1 "Power Con." H 1340 5100 50  0000 C CNN
 F 2 "" H 1290 5755 50  0001 C CNN
 F 3 "~" H 1290 5755 50  0001 C CNN
 	1    1290 5755
@@ -4112,6 +4112,12 @@ Text Notes 1760 4120 0    50   ~ 0
 2 MHz
 Text Notes 4210 11075 0    50   ~ 10
 Remove IC15 to disable the watchdog\n
+Text Label 7510 8460 0    50   ~ 0
+_Rom1ce
+Text Notes 8635 8885 0    50   ~ 0
+RAM_Selected
+Text Notes 13250 6005 1    50   ~ 0
+~RAM_Selected
 Wire Bus Line
 	6190 4835 11855 4835
 Wire Bus Line
@@ -4140,6 +4146,22 @@ Wire Bus Line
 	9140 4935 9140 6710
 Wire Bus Line
 	4530 1040 4530 3815
-Text Label 7510 8460 0    50   ~ 0
-_Rom1ce
+Text Notes 3390 5140 0    50   ~ 0
+(Reset Btn side)
+Text Notes 940  5240 0    50   ~ 0
+(Reset Btn side)
+Text Notes 6925 4215 0    50   ~ 0
+next to CPU
+Text Notes 8960 4215 0    50   ~ 0
+middle one
+Text Notes 10925 4190 0    50   ~ 0
+below the Reset btn
+Text Notes 6855 4315 0    50   ~ 10
+Base Addr 0x08
+Text Notes 8890 4315 0    50   ~ 10
+Base Addr 0x00
+Text Notes 11025 4295 0    50   ~ 10
+Base Addr 0x0C
+Text Notes 14090 4025 0    50   ~ 10
+Base Addr 0x04
 $EndSCHEMATC

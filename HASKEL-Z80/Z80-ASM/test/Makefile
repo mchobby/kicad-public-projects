@@ -4,7 +4,9 @@ PROGS=\
  02_in_out.bin \
  03_pio.bin \
  04_pio_read.bin \
- 05_stack.bin
+ 05_stack.bin \
+ 06_ctc_ch1.bin \
+ 07_ctc_seconds.bin
 
 all: $(PROGS)
 
@@ -24,3 +26,5 @@ world: clean all
 03_pio.bin: io.asm 03_pio.asm
 04_pio_read.bin: io.asm 04_pio_read.asm
 05_stack.bin: io.asm 05_stack.asm
+06_ctc_ch1.bin: io.asm 06_ctc_ch1.asm
+07_ctc_seconds.bin: io.asm 07_ctc_seconds.asm

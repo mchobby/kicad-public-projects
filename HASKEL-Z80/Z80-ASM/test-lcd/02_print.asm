@@ -19,14 +19,22 @@
 ;
 ;****************************************************************************
 
-; First program with stack pointer (set to end of RAM)
-; Alternate the blink of LEDs D7 & D6 on the RCIO expension board.
+; Print a null terminated string on the LCD.
+; Set LEDs D1 on the RCIO expansion board at start.
+;
+; https://github.com/arduino-libraries/LiquidCrystal/blob/master/src/LiquidCrystal.cpp
 ;
 
 include 'io.asm'
 
 RAM_BASE: equ 0x2000 ; see CPU-BOARD addressing table
 RAM_END:  equ 0x27FF
+
+; PIOLCD definition
+PIOLCD_CMD: equ PIO1_BASE+PIO_PORTB+PIO_CMD
+PIOLCD_DATA: equ PIO1_BASE+PIO_PORTB+PIO_DATA
+LCD_W: equ 20         ; 20 chars per line
+LCD_R: equ 4          ; 4 lines
 
 org     0x0000               ; Cold reset Z80 entry point.
 
@@ -38,40 +46,23 @@ RST0:
 
 
 START:
-    ld a, 0x80           ; LED D7
-    out (RCIO_OUTPUT),a  ; Apply to LEDs
+    ld a, $01                ; LED 1 ON
+    out (RCIO_OUTPUT), a
 
-    call _delay
+		call piolcd_begin        ; Init the LCD
 
-    ld a, 0x40           ; LED D6
-    out (RCIO_OUTPUT),a  ; Apply to LEDs
+		; Print a Null-terminated string on the LCD
+		LD hl, msg
+		call piolcd_print
 
-    call _delay
-    jp START             ; restart the Loop
 
-; ############################################################
-;   Waste some time then return
-; ############################################################
-_delay:
-    ; for 2 Mhz System Clock
-    ; 0xf442 = 750 ms
-    ; 0xa2d6 = 500 ms
-		; 0x516b = 250 ms (250.5 ms)
-		; 0x61b4 = 300 ms
-    ; 0x40f9 = 200 ms (199.5 ms)
-    ; 0x207C = 100 ms (99.25 ms)
-    ; 0x103E = 50 ms
-		; 0x824  = 25 ms
-		; 0x683  = 20 ms
-		; 0x341  = 10 ms
-		; 0x1a0  = 5ms
-		; 0x53   = 1ms (1.040 ms)
-		; 0x29   = 500us (520 us)
-		; 0x7    = 100us (120 us)
-		ld hl, 0x7
-dloop:
-    dec hl
-		ld a, h
-		or l
-		jp nz, dloop
-		ret
+		ld a, $80                ; all LED 7 ON
+    out (RCIO_OUTPUT), a
+
+		HALT
+
+msg:
+		db "Hello World!"
+		db 0               ; don't forget the null!!!
+
+include 'piolcd.asm'

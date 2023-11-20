@@ -13,6 +13,7 @@ makezip.sh
 *.sch-bak
 *.kicad_pcb-bak
 CPU-BOARD-ADDON-v*
+SIO-ADDON-*
 Programmer-GLS27SF512-0*
 
 # Byte-compiled / optimized / DLL files

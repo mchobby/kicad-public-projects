@@ -34,6 +34,11 @@ D 2K x 8 bit SRAM, 120ns, DIP-24
 K RAM SRAM CMOS MEMORY
 $ENDCMP
 #
+$CMP M5205
+D ADCPM (Adaptive Differential Pulse Code Modulation) SPEECH SYNTHESIS
+K ADPCM Speech Synthesis; 10 bit D/A Converter; OKI semicondutor
+$ENDCMP
+#
 $CMP S2559E
 D DTMF Tone Generator, DIP-16
 K DTMF Tone Generator
@@ -42,6 +47,11 @@ $ENDCMP
 $CMP Z8030
 D Z8430, Z80 CTC, Counter/Timer Circuit
 K Counter/Timer Circuit for Z80, DIP28
+$ENDCMP
+#
+$CMP Z8440
+D Z8440, Z80 SIO/2 , serial interface
+K Z80 SIO SIO2 Z84C4208
 $ENDCMP
 #
 #End Doc Library

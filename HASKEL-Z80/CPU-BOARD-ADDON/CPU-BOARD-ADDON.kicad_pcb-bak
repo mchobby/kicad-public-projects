@@ -13,7 +13,7 @@
   (title_block
     (title "DTMF Phone central - CPU Board Add-on - Hasler / Ascom")
     (date 2023-06-24)
-    (rev 2)
+    (rev 4)
     (comment 1 https://forum.system-cfg.com/viewtopic.php?p=231268#p231268)
     (comment 2 "RTT No 41178005 (Belgium)")
     (comment 3 "1061 - 2020 Rev C.")

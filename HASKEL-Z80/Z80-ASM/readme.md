@@ -270,12 +270,16 @@ This will be very handy while alternating LEDs.
 
 ### About the STACK
 
+![Stack](docs/stack.jpg)
+
 The stack --as it name suggest it-- stacks current address before initiate a call.
 This would allow the program a jump to a sub-routine then extract (pop) the address back from the stack (to a jump back to calling point).
 
 Stack can also be used to store some more data as register states (but we will not be managed here).
 
-* Stack is stored at the end of the memory space (also named memory top).
+![Stack 2](docs/stack-memory.jpg)
+
+* **Stack is stored at the end of the memory space** (also named memory top).
 * The stack pointer (SP register) contains the address of the LAST item added in the stack.
 * Stack work in reverse by decrementing stack pointer each time it adds someting to the stack.
 * The stack pointer value is decremented before adding the new value.
@@ -334,3 +338,140 @@ dloop:
     jp nz, dloop         ; if last operation is not zero then restart decounting loop
     ret                  ; Return to callee
 ```
+
+I have experienced values on 2 Mhz System Clock to find standard timing controled with trace scope.
+
+* 0xf442 = 750 ms
+* 0xa2d6 = 500 ms
+* 0x516b = 250 ms (250.5 ms)
+* 0x61b4 = 300 ms
+* 0x40f9 = 200 ms (199.5 ms)
+* 0x207C = 100 ms (99.25 ms)
+* 0x103E = 50 ms
+* 0x824  = 25 ms
+* 0x683  = 20 ms
+* 0x341  = 10 ms
+* 0x1a0  = 5ms
+* 0x53   = 1ms (1.040 ms)
+* 0x29   = 500us (520 us)
+* 0x7    = 100us (120 us)
+
+## 06_ctc_ch1.asm
+
+The example [test/ctc_ch1.asm](test/ctc_ch1.asm) initialize the Channel 1 of the CTC. It set the clock Prescaler to 256 and the channel counter to 256.
+
+The result is 2 Mhz / 256 / 256 = 2.000.000 / 256 / 256 = 30.517 Hz Output Pulse!
+
+```
+include 'io.asm'
+
+RAM_BASE: equ 0x2000 ; see CPU-BOARD addressing table
+RAM_END:  equ 0x27FF
+
+org     0x0000               ; Cold reset Z80 entry point.
+
+RST0:
+    ld sp,RAM_END+1          ; init stack pointer
+
+    ld a, $00                ; all LEDs OFF
+    out (RCIO_OUTPUT), a
+
+
+START:
+    ld a, 0x80           ; LED D7 Light
+    out (RCIO_OUTPUT),a  ; Apply to LEDs
+
+    ld a, %00100111      ; init CTC Ch 1 as Timer, immediate start with prescale 256
+                         ; bit 7 = 0 = disable interrupt
+                         ; bit 6 = 0 = timer mode
+                         ; bit 5 = 1 = 256 Prescaler
+                         ; bit 4 = 0 = Falling edge
+                         ; bit 3 = 0 = automatic trigger when time constant is loaded
+                         ; bit 2 = 1 = Time constant follows
+                         ; bit 1 = 1 = Software reset
+                         ; bit 0 = 1 = control command
+    out (CTC_BASE + CTC_CH1), a
+    ld a, 0xFF           ; set time constant.
+    out (CTC_BASE + CTC_CH1), a
+
+    ld a, 0xFF           ; All LED on
+    out (RCIO_OUTPUT),a  ; Apply to LEDs
+
+   halt
+```
+
+![CTC timer 1](docs/06-ctc-timer.jpg)
+
+Using a scope on the CTC pin named "ZC/TO1", we can measure the pulse frequency
+
+![CTC timer 2](docs/06-ctc-timer1.jpg)
+
+The scope measure a pulse each 32.65ms (30.6 Hz).
+
+## 07_ctc_seconds.asm
+
+As the output of channel 1 is connected to the trigger of the channel 0, we could combine the existing channel 1 timer with the a pulse counter setup on channel 0.
+
+This way, it is possible get a "Seconds" base time pulse on ZC/TO0 output.
+
+1. The CTC channel 1 timer is configured to divide the 2 Mhz clock / 256 / __251__. This will generates 31.001 pulse/sec.
+2. The pulses on ZC/TO1 output feeds channel 0.
+3. Channel 0 is configured to count down the 31 pulses => provide 1 pulse/sec on ZC/TC0 output.
+
+```
+RAM_BASE: equ 0x2000 ; see CPU-BOARD addressing table
+RAM_END:  equ 0x27FF
+
+org     0x0000               ; Cold reset Z80 entry point.
+
+RST0:
+    ld sp,RAM_END+1          ; init stack pointer
+
+    ld a, $00                ; all LEDs OFF
+    out (RCIO_OUTPUT), a
+
+
+START:
+    ld a, 0x80           ; LED D7
+    out (RCIO_OUTPUT),a  ; Apply to LEDs
+
+    ld a, %00100111      ; init CTC Ch 1 as Timer, immediate start with prescale 256
+                         ; see previous example for bit configuration details
+    out (CTC_BASE + CTC_CH1), a
+    ld a, 251            ; set time constant. Output 31 pulse/sec
+    out (CTC_BASE + CTC_CH1), a
+
+    ld a, %01010111      ; init CTC Ch 0 as counter
+                         ; bit 7 = 0 = disable interrupt
+                         ; bit 6 = 1 = counter mode
+                         ; bit 5 = 0 = Prescaler, don't care for counter
+                         ; bit 4 = 1 = Raising edge detecion
+                         ; bit 3 = 0 = don't care for counter
+                         ; bit 2 = 1 = Time constant follows
+                         ; bit 1 = 1 = Software reset
+                         ; bit 0 = 1 = control command
+    out (CTC_BASE + CTC_CH0), a
+    ld a, 31             ; count 31 pulse. Output 1 pulse/sec
+    out (CTC_BASE + CTC_CH0), a
+
+    ld a, 0xFF           ; All LED on
+    out (RCIO_OUTPUT),a  ; Apply to LEDs
+
+   halt
+```
+
+As showed on the scope capture below, the output frequency of ZC/TCO is set to 1 Hz (997ms between pulses).
+
+![CTC Timer + counter](docs/07-ctc-seconds-00.jpg)
+
+As pulses are not easy to view, I placed measurement on the graph.
+
+![CTC Timer + counter](docs/07-ctc-seconds-01.jpg)
+
+## LCD examples
+
+As Arduino can drive a 16x2 or 20x4 LCD in 4 bits mode, I decided to wire such a LCD on the PIO 1 of the CPU board then port the LiquidCrystal library to Z80 ASM.
+
+![PIO LCD example](docs/piolcd-00.jpg)
+
+I have detailed the wiring and tests in a separate [readme-piolcd](readme-piolcd.md) readme file.

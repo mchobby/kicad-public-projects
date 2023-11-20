@@ -19,9 +19,10 @@
 ;
 ;****************************************************************************
 
-; First program with stack pointer (set to end of RAM)
-; Alternate the blink of LEDs D7 & D6 on the RCIO expension board.
-;
+; Configure the CTC channel 1 timer to divide the 2 Mhz clock / 256 / 251
+;  => provides 31.001 pulse/sec
+; Feed the ZC/TO1 output to channel 0 to count down the 31 pulses
+;  => provide 1 pulse/sec
 
 include 'io.asm'
 
@@ -41,37 +42,17 @@ START:
     ld a, 0x80           ; LED D7
     out (RCIO_OUTPUT),a  ; Apply to LEDs
 
-    call _delay
+    ld a, %00100111      ; init CTC Ch 1 as Timer, immediate start with prescale 256
+    out (CTC_BASE + CTC_CH1), a
+		ld a, 251            ; set time constant. Output 31 pulse/sec
+		out (CTC_BASE + CTC_CH1), a
 
-    ld a, 0x40           ; LED D6
+		ld a, %01010111      ; init CTC Ch 0 as counter
+		out (CTC_BASE + CTC_CH0), a
+		ld a, 31             ; count 31 pulse. Output 1 pulse/sec
+		out (CTC_BASE + CTC_CH0), a
+
+    ld a, 0xFF           ; All LED
     out (RCIO_OUTPUT),a  ; Apply to LEDs
 
-    call _delay
-    jp START             ; restart the Loop
-
-; ############################################################
-;   Waste some time then return
-; ############################################################
-_delay:
-    ; for 2 Mhz System Clock
-    ; 0xf442 = 750 ms
-    ; 0xa2d6 = 500 ms
-		; 0x516b = 250 ms (250.5 ms)
-		; 0x61b4 = 300 ms
-    ; 0x40f9 = 200 ms (199.5 ms)
-    ; 0x207C = 100 ms (99.25 ms)
-    ; 0x103E = 50 ms
-		; 0x824  = 25 ms
-		; 0x683  = 20 ms
-		; 0x341  = 10 ms
-		; 0x1a0  = 5ms
-		; 0x53   = 1ms (1.040 ms)
-		; 0x29   = 500us (520 us)
-		; 0x7    = 100us (120 us)
-		ld hl, 0x7
-dloop:
-    dec hl
-		ld a, h
-		or l
-		jp nz, dloop
-		ret
+   halt
