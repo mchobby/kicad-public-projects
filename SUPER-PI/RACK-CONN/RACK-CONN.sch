@@ -1,0 +1,658 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "SuperPi - Rack PWR Distribution"
+Date "2024-02-09"
+Rev "1"
+Comp "MC Hobby SPRL"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:Conn_01x06_Female J103
+U 1 1 65C61BAB
+P 1795 2765
+F 0 "J103" H 1615 2170 50  0000 L CNN
+F 1 "Conn_RackPwr" H 1395 3245 50  0000 L CNN
+F 2 "connectors:STD_EDGE_II_6pos_Card_Edge_Conn" H 1795 2765 50  0001 C CNN
+F 3 "~" H 1795 2765 50  0001 C CNN
+	1    1795 2765
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+5C #PWR0104
+U 1 1 65C63D38
+P 1995 2565
+F 0 "#PWR0104" H 1995 2415 50  0001 C CNN
+F 1 "+5C" H 2010 2738 50  0000 C CNN
+F 2 "" H 1995 2565 50  0001 C CNN
+F 3 "" H 1995 2565 50  0001 C CNN
+	1    1995 2565
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5C #PWR0105
+U 1 1 65C64696
+P 1995 3065
+F 0 "#PWR0105" H 1995 2915 50  0001 C CNN
+F 1 "+5C" H 2010 3238 50  0000 C CNN
+F 2 "" H 1995 3065 50  0001 C CNN
+F 3 "" H 1995 3065 50  0001 C CNN
+	1    1995 3065
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0106
+U 1 1 65C65268
+P 2245 2865
+F 0 "#PWR0106" H 2245 2615 50  0001 C CNN
+F 1 "GND" H 2250 2692 50  0000 C CNN
+F 2 "" H 2245 2865 50  0001 C CNN
+F 3 "" H 2245 2865 50  0001 C CNN
+	1    2245 2865
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1995 2865 2075 2865
+Wire Wire Line
+	1995 2765 2075 2765
+Wire Wire Line
+	2075 2765 2075 2865
+Connection ~ 2075 2865
+Text Label 1995 2665 0    50   ~ 0
+panic
+$Comp
+L Connector:Conn_01x06_Female J104
+U 1 1 65C68F2D
+P 2430 2770
+F 0 "J104" H 2250 2175 50  0000 L CNN
+F 1 "Conn_RackPwr" H 2030 3250 50  0000 L CNN
+F 2 "connectors:STD_EDGE_II_6pos_Card_Edge_Conn" H 2430 2770 50  0001 C CNN
+F 3 "~" H 2430 2770 50  0001 C CNN
+	1    2430 2770
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+5C #PWR0107
+U 1 1 65C68FBB
+P 2630 2570
+F 0 "#PWR0107" H 2630 2420 50  0001 C CNN
+F 1 "+5C" H 2645 2743 50  0000 C CNN
+F 2 "" H 2630 2570 50  0001 C CNN
+F 3 "" H 2630 2570 50  0001 C CNN
+	1    2630 2570
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5C #PWR0108
+U 1 1 65C68FC5
+P 2630 3070
+F 0 "#PWR0108" H 2630 2920 50  0001 C CNN
+F 1 "+5C" H 2645 3243 50  0000 C CNN
+F 2 "" H 2630 3070 50  0001 C CNN
+F 3 "" H 2630 3070 50  0001 C CNN
+	1    2630 3070
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0111
+U 1 1 65C68FCF
+P 2870 2870
+F 0 "#PWR0111" H 2870 2620 50  0001 C CNN
+F 1 "GND" H 2875 2697 50  0000 C CNN
+F 2 "" H 2870 2870 50  0001 C CNN
+F 3 "" H 2870 2870 50  0001 C CNN
+	1    2870 2870
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2630 2870 2710 2870
+Wire Wire Line
+	2630 2770 2710 2770
+Wire Wire Line
+	2710 2770 2710 2870
+Connection ~ 2710 2870
+Text Label 2630 2670 0    50   ~ 0
+panic
+$Comp
+L Connector:Conn_01x06_Female J108
+U 1 1 65C6CE53
+P 4125 2775
+F 0 "J108" H 3945 2180 50  0000 L CNN
+F 1 "Conn_RackPwr" H 3725 3255 50  0000 L CNN
+F 2 "connectors:STD_EDGE_II_6pos_Card_Edge_Conn" H 4125 2775 50  0001 C CNN
+F 3 "~" H 4125 2775 50  0001 C CNN
+	1    4125 2775
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+5C #PWR0117
+U 1 1 65C6CF3B
+P 4325 2575
+F 0 "#PWR0117" H 4325 2425 50  0001 C CNN
+F 1 "+5C" H 4340 2748 50  0000 C CNN
+F 2 "" H 4325 2575 50  0001 C CNN
+F 3 "" H 4325 2575 50  0001 C CNN
+	1    4325 2575
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5C #PWR0118
+U 1 1 65C6CF45
+P 4325 3075
+F 0 "#PWR0118" H 4325 2925 50  0001 C CNN
+F 1 "+5C" H 4340 3248 50  0000 C CNN
+F 2 "" H 4325 3075 50  0001 C CNN
+F 3 "" H 4325 3075 50  0001 C CNN
+	1    4325 3075
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0121
+U 1 1 65C6CF4F
+P 4565 2875
+F 0 "#PWR0121" H 4565 2625 50  0001 C CNN
+F 1 "GND" H 4570 2702 50  0000 C CNN
+F 2 "" H 4565 2875 50  0001 C CNN
+F 3 "" H 4565 2875 50  0001 C CNN
+	1    4565 2875
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4325 2875 4405 2875
+Wire Wire Line
+	4325 2775 4405 2775
+Wire Wire Line
+	4405 2775 4405 2875
+Connection ~ 4405 2875
+Text Label 4325 2675 0    50   ~ 0
+panic
+$Comp
+L Connector:Conn_01x02_Female J106
+U 1 1 65C70D21
+P 3405 2335
+F 0 "J106" V 3380 2190 50  0000 R CNN
+F 1 "Conn_PWR_IN" V 3470 2545 50  0000 R CNN
+F 2 "connectors:PinHeader_1x02_P5.08mm_Vertical" H 3405 2335 50  0001 C CNN
+F 3 "~" H 3405 2335 50  0001 C CNN
+	1    3405 2335
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0113
+U 1 1 65C7471A
+P 3405 2675
+F 0 "#PWR0113" H 3405 2425 50  0001 C CNN
+F 1 "GND" H 3360 2535 50  0000 C CNN
+F 2 "" H 3405 2675 50  0001 C CNN
+F 3 "" H 3405 2675 50  0001 C CNN
+	1    3405 2675
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5C #PWR0115
+U 1 1 65C74DD6
+P 3505 2675
+F 0 "#PWR0115" H 3505 2525 50  0001 C CNN
+F 1 "+5C" H 3480 2810 50  0000 C CNN
+F 2 "" H 3505 2675 50  0001 C CNN
+F 3 "" H 3505 2675 50  0001 C CNN
+	1    3505 2675
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 65C75FC0
+P 3250 2595
+F 0 "#FLG0101" H 3250 2670 50  0001 C CNN
+F 1 "PWR_FLAG" H 3120 2745 50  0000 C CNN
+F 2 "" H 3250 2595 50  0001 C CNN
+F 3 "~" H 3250 2595 50  0001 C CNN
+	1    3250 2595
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG0102
+U 1 1 65C789E8
+P 3630 2595
+F 0 "#FLG0102" H 3630 2670 50  0001 C CNN
+F 1 "PWR_FLAG" H 3740 2745 50  0000 C CNN
+F 2 "" H 3630 2595 50  0001 C CNN
+F 3 "~" H 3630 2595 50  0001 C CNN
+	1    3630 2595
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3405 2535 3405 2595
+Wire Wire Line
+	3250 2595 3405 2595
+Connection ~ 3405 2595
+Wire Wire Line
+	3405 2595 3405 2675
+Wire Wire Line
+	3505 2535 3505 2595
+Wire Wire Line
+	3630 2595 3505 2595
+Connection ~ 3505 2595
+Wire Wire Line
+	3505 2595 3505 2675
+$Comp
+L Connector:Conn_01x06_Female J110
+U 1 1 65C8995F
+P 4845 2780
+F 0 "J110" H 4665 2185 50  0000 L CNN
+F 1 "Conn_RackPwr" H 4445 3260 50  0000 L CNN
+F 2 "connectors:STD_EDGE_II_6pos_Card_Edge_Conn" H 4845 2780 50  0001 C CNN
+F 3 "~" H 4845 2780 50  0001 C CNN
+	1    4845 2780
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+5C #PWR0123
+U 1 1 65C89AEB
+P 5045 2580
+F 0 "#PWR0123" H 5045 2430 50  0001 C CNN
+F 1 "+5C" H 5060 2753 50  0000 C CNN
+F 2 "" H 5045 2580 50  0001 C CNN
+F 3 "" H 5045 2580 50  0001 C CNN
+	1    5045 2580
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5C #PWR0124
+U 1 1 65C89AF5
+P 5045 3080
+F 0 "#PWR0124" H 5045 2930 50  0001 C CNN
+F 1 "+5C" H 5060 3253 50  0000 C CNN
+F 2 "" H 5045 3080 50  0001 C CNN
+F 3 "" H 5045 3080 50  0001 C CNN
+	1    5045 3080
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0127
+U 1 1 65C89AFF
+P 5290 2880
+F 0 "#PWR0127" H 5290 2630 50  0001 C CNN
+F 1 "GND" H 5295 2707 50  0000 C CNN
+F 2 "" H 5290 2880 50  0001 C CNN
+F 3 "" H 5290 2880 50  0001 C CNN
+	1    5290 2880
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5045 2880 5125 2880
+Wire Wire Line
+	5045 2780 5125 2780
+Wire Wire Line
+	5125 2780 5125 2880
+Connection ~ 5125 2880
+Text Label 5045 2680 0    50   ~ 0
+panic
+$Comp
+L Connector:Conn_01x06_Female J105
+U 1 1 65C93FFA
+P 2465 4545
+F 0 "J105" H 2285 3950 50  0000 L CNN
+F 1 "Conn_RackPwr" H 2065 5025 50  0000 L CNN
+F 2 "connectors:STD_EDGE_II_6pos_Card_Edge_Conn" H 2465 4545 50  0001 C CNN
+F 3 "~" H 2465 4545 50  0001 C CNN
+	1    2465 4545
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+5C #PWR0109
+U 1 1 65C9418C
+P 2665 4345
+F 0 "#PWR0109" H 2665 4195 50  0001 C CNN
+F 1 "+5C" H 2680 4518 50  0000 C CNN
+F 2 "" H 2665 4345 50  0001 C CNN
+F 3 "" H 2665 4345 50  0001 C CNN
+	1    2665 4345
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5C #PWR0110
+U 1 1 65C94196
+P 2665 4845
+F 0 "#PWR0110" H 2665 4695 50  0001 C CNN
+F 1 "+5C" H 2680 5018 50  0000 C CNN
+F 2 "" H 2665 4845 50  0001 C CNN
+F 3 "" H 2665 4845 50  0001 C CNN
+	1    2665 4845
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0112
+U 1 1 65C941A0
+P 2905 4645
+F 0 "#PWR0112" H 2905 4395 50  0001 C CNN
+F 1 "GND" H 2910 4472 50  0000 C CNN
+F 2 "" H 2905 4645 50  0001 C CNN
+F 3 "" H 2905 4645 50  0001 C CNN
+	1    2905 4645
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2665 4645 2745 4645
+Wire Wire Line
+	2665 4545 2745 4545
+Wire Wire Line
+	2745 4545 2745 4645
+Text Label 2665 4445 0    50   ~ 0
+panic
+$Comp
+L Connector:Conn_01x06_Female J109
+U 1 1 65C941B2
+P 4160 4550
+F 0 "J109" H 3980 3955 50  0000 L CNN
+F 1 "Conn_RackPwr" H 3760 5030 50  0000 L CNN
+F 2 "connectors:STD_EDGE_II_6pos_Card_Edge_Conn" H 4160 4550 50  0001 C CNN
+F 3 "~" H 4160 4550 50  0001 C CNN
+	1    4160 4550
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+5C #PWR0119
+U 1 1 65C941BC
+P 4360 4350
+F 0 "#PWR0119" H 4360 4200 50  0001 C CNN
+F 1 "+5C" H 4375 4523 50  0000 C CNN
+F 2 "" H 4360 4350 50  0001 C CNN
+F 3 "" H 4360 4350 50  0001 C CNN
+	1    4360 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5C #PWR0120
+U 1 1 65C941C6
+P 4360 4850
+F 0 "#PWR0120" H 4360 4700 50  0001 C CNN
+F 1 "+5C" H 4375 5023 50  0000 C CNN
+F 2 "" H 4360 4850 50  0001 C CNN
+F 3 "" H 4360 4850 50  0001 C CNN
+	1    4360 4850
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0122
+U 1 1 65C941D0
+P 4610 4650
+F 0 "#PWR0122" H 4610 4400 50  0001 C CNN
+F 1 "GND" H 4615 4477 50  0000 C CNN
+F 2 "" H 4610 4650 50  0001 C CNN
+F 3 "" H 4610 4650 50  0001 C CNN
+	1    4610 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4360 4650 4440 4650
+Wire Wire Line
+	4360 4550 4440 4550
+Wire Wire Line
+	4440 4550 4440 4650
+Connection ~ 4440 4650
+Text Label 4360 4450 0    50   ~ 0
+panic
+$Comp
+L Connector:Conn_01x02_Female J107
+U 1 1 65C941E2
+P 3440 4110
+F 0 "J107" V 3415 3965 50  0000 R CNN
+F 1 "Conn_PWR_IN" V 3505 4320 50  0000 R CNN
+F 2 "connectors:PinHeader_1x02_P5.08mm_Vertical" H 3440 4110 50  0001 C CNN
+F 3 "~" H 3440 4110 50  0001 C CNN
+	1    3440 4110
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0114
+U 1 1 65C941EC
+P 3440 4450
+F 0 "#PWR0114" H 3440 4200 50  0001 C CNN
+F 1 "GND" H 3395 4310 50  0000 C CNN
+F 2 "" H 3440 4450 50  0001 C CNN
+F 3 "" H 3440 4450 50  0001 C CNN
+	1    3440 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5C #PWR0116
+U 1 1 65C941F6
+P 3540 4450
+F 0 "#PWR0116" H 3540 4300 50  0001 C CNN
+F 1 "+5C" H 3515 4585 50  0000 C CNN
+F 2 "" H 3540 4450 50  0001 C CNN
+F 3 "" H 3540 4450 50  0001 C CNN
+	1    3540 4450
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x06_Female J111
+U 1 1 65C9421C
+P 4880 4555
+F 0 "J111" H 4700 3960 50  0000 L CNN
+F 1 "Conn_RackPwr" H 4480 5035 50  0000 L CNN
+F 2 "connectors:STD_EDGE_II_6pos_Card_Edge_Conn" H 4880 4555 50  0001 C CNN
+F 3 "~" H 4880 4555 50  0001 C CNN
+	1    4880 4555
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+5C #PWR0125
+U 1 1 65C94226
+P 5080 4355
+F 0 "#PWR0125" H 5080 4205 50  0001 C CNN
+F 1 "+5C" H 5095 4528 50  0000 C CNN
+F 2 "" H 5080 4355 50  0001 C CNN
+F 3 "" H 5080 4355 50  0001 C CNN
+	1    5080 4355
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5C #PWR0126
+U 1 1 65C94230
+P 5080 4855
+F 0 "#PWR0126" H 5080 4705 50  0001 C CNN
+F 1 "+5C" H 5095 5028 50  0000 C CNN
+F 2 "" H 5080 4855 50  0001 C CNN
+F 3 "" H 5080 4855 50  0001 C CNN
+	1    5080 4855
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0128
+U 1 1 65C9423A
+P 5330 4655
+F 0 "#PWR0128" H 5330 4405 50  0001 C CNN
+F 1 "GND" H 5335 4482 50  0000 C CNN
+F 2 "" H 5330 4655 50  0001 C CNN
+F 3 "" H 5330 4655 50  0001 C CNN
+	1    5330 4655
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5080 4655 5160 4655
+Wire Wire Line
+	5080 4555 5160 4555
+Wire Wire Line
+	5160 4555 5160 4655
+Connection ~ 5160 4655
+Text Label 5080 4455 0    50   ~ 0
+panic
+Wire Wire Line
+	3440 4310 3440 4450
+Wire Wire Line
+	3540 4310 3540 4450
+$Comp
+L Connector:Conn_01x02_Female J101
+U 1 1 65CA6C24
+P 1250 2355
+F 0 "J101" V 1225 2210 50  0000 R CNN
+F 1 "Conn_PWR_IN" V 1315 2565 50  0000 R CNN
+F 2 "connectors:PinHeader_1x02_P5.08mm_Vertical" H 1250 2355 50  0001 C CNN
+F 3 "~" H 1250 2355 50  0001 C CNN
+	1    1250 2355
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 65CA6F32
+P 1250 2695
+F 0 "#PWR0102" H 1250 2445 50  0001 C CNN
+F 1 "GND" H 1205 2555 50  0000 C CNN
+F 2 "" H 1250 2695 50  0001 C CNN
+F 3 "" H 1250 2695 50  0001 C CNN
+	1    1250 2695
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5C #PWR0103
+U 1 1 65CA6F3C
+P 1350 2695
+F 0 "#PWR0103" H 1350 2545 50  0001 C CNN
+F 1 "+5C" H 1325 2830 50  0000 C CNN
+F 2 "" H 1350 2695 50  0001 C CNN
+F 3 "" H 1350 2695 50  0001 C CNN
+	1    1350 2695
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1250 2555 1250 2695
+Wire Wire Line
+	1350 2555 1350 2695
+Text Notes 2305 2050 0    98   ~ 20
+Group of 4 connectors
+Text Notes 2340 3785 0    98   ~ 20
+Group of 3 connectors
+$Comp
+L power:GND #PWR0101
+U 1 1 65CCA0CE
+P 1195 4515
+F 0 "#PWR0101" H 1195 4265 50  0001 C CNN
+F 1 "GND" H 1150 4375 50  0000 C CNN
+F 2 "" H 1195 4515 50  0001 C CNN
+F 3 "" H 1195 4515 50  0001 C CNN
+	1    1195 4515
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1195 4375 1195 4515
+Text Label 1295 4580 1    50   ~ 0
+panic
+$Comp
+L Connector_Generic:Conn_01x03 J102
+U 1 1 65CD110D
+P 1295 4175
+F 0 "J102" V 1259 3987 50  0000 R CNN
+F 1 "Conn_JstPH" V 1168 3987 50  0000 R CNN
+F 2 "Connector_JST:JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal" H 1295 4175 50  0001 C CNN
+F 3 "~" H 1295 4175 50  0001 C CNN
+	1    1295 4175
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1295 4375 1295 4585
+Wire Wire Line
+	1395 4375 1395 4585
+Text Label 1395 4585 1    50   ~ 0
+misc
+Text Notes 840  5170 0    50   ~ 0
+Panic is pulled-up to 3.3V\nSet panic to GND to activate\n\nMisc is not assigned\nMisc should be 3V3 only
+Text Label 2665 4745 0    50   ~ 0
+misc
+Wire Wire Line
+	2745 4645 2905 4645
+Connection ~ 2745 4645
+Wire Wire Line
+	2665 4745 2835 4745
+Text Label 4360 4750 0    50   ~ 0
+misc
+Wire Wire Line
+	4360 4750 4530 4750
+Text Label 5080 4755 0    50   ~ 0
+misc
+Wire Wire Line
+	5080 4755 5250 4755
+Text Label 4325 2975 0    50   ~ 0
+misc
+Wire Wire Line
+	4325 2975 4495 2975
+Text Label 5045 2980 0    50   ~ 0
+misc
+Wire Wire Line
+	5045 2980 5215 2980
+Text Label 2630 2970 0    50   ~ 0
+misc
+Wire Wire Line
+	2630 2970 2800 2970
+Text Label 1995 2965 0    50   ~ 0
+misc
+Wire Wire Line
+	1995 2965 2165 2965
+Wire Wire Line
+	5125 2880 5290 2880
+Wire Wire Line
+	4405 2875 4565 2875
+Wire Wire Line
+	2710 2870 2870 2870
+Wire Wire Line
+	2075 2865 2245 2865
+Wire Wire Line
+	4440 4650 4610 4650
+Wire Wire Line
+	5160 4655 5330 4655
+$Comp
+L Connector:Conn_01x03_Male J112
+U 1 1 65C68D97
+P 985 5625
+F 0 "J112" H 958 5557 50  0000 R CNN
+F 1 "Conn_JstPH_replicat" H 1365 5385 50  0000 R CNN
+F 2 "connectors:PadHeader_1x03_P2.54mm_SMD" H 985 5625 50  0001 C CNN
+F 3 "~" H 985 5625 50  0001 C CNN
+	1    985  5625
+	1    0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x03_Male J113
+U 1 1 65C6BC05
+P 1840 5625
+F 0 "J113" H 1813 5557 50  0000 R CNN
+F 1 "Conn_JstPH_replicat" H 2185 5400 50  0000 R CNN
+F 2 "connectors:PadHeader_1x03_P2.54mm_SMD" H 1840 5625 50  0001 C CNN
+F 3 "~" H 1840 5625 50  0001 C CNN
+	1    1840 5625
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0129
+U 1 1 65C6ED6F
+P 1420 5810
+F 0 "#PWR0129" H 1420 5560 50  0001 C CNN
+F 1 "GND" H 1375 5670 50  0000 C CNN
+F 2 "" H 1420 5810 50  0001 C CNN
+F 3 "" H 1420 5810 50  0001 C CNN
+	1    1420 5810
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1185 5725 1420 5725
+Wire Wire Line
+	1420 5810 1420 5725
+Connection ~ 1420 5725
+Wire Wire Line
+	1420 5725 1640 5725
+Wire Wire Line
+	1185 5625 1640 5625
+Wire Wire Line
+	1185 5525 1640 5525
+Text Label 1185 5625 0    50   ~ 0
+panic
+Text Label 1190 5525 0    50   ~ 0
+misc
+$EndSCHEMATC
